@@ -27,5 +27,12 @@ public class TypeCasting {
 		
 		short h = 'A';
 		System.out.println("h: " + h);
+		
+		double avg = (2+3)/2;
+		System.out.println("avg: " + avg);
+		
+		double aveg = (double)(2+3)/2;
+		System.out.println("avg: " + aveg);
+		
 	}
 }
