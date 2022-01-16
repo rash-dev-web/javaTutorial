@@ -2,33 +2,50 @@ package section3;
 
 public class CurrencyConverterArray {
 
-	double[] exchangeRates ;//= {75, 3, 3, 595, 18, 107, 2};
-	
-	void setExchangeRates(double[] exchangeRates) {
-		this.exchangeRates = exchangeRates;
+	// Currency exchange rates of different currencies relative to 1 US dollar
+
+	double[] exchangeRates = new double[] { 63.0, 3.0, 3.0, 595.5, 18.0, 107.0, 2.0 };
+
+	void setExchangeRates(double[] rates) {
+
+		exchangeRates = rates;
+
 	}
-	
-	void updateExchangeRates(int index, double value) {
-		exchangeRates[index] = value;
+
+	void updateExchangeRate(int countryIndex, double newVal) {
+
+		exchangeRates[countryIndex] = newVal;
+
+	}
+
+	double getExchangeRate(int countryIndex) {
+
+		return exchangeRates[countryIndex];
+
+	}
+
+	double computeTransferAmount(int countryIndex, double amount) {
+
+		return amount * getExchangeRate(countryIndex);
+
 	}
 
 	void printCurrencies() {
 
-		for(double rate: exchangeRates) {
-			System.out.println(rate);
-		}
-		System.out.println("Size: " + exchangeRates.length);
+		System.out.println("\nrupee: " + exchangeRates[0]);
 
-	}
-	
-	public static void main(String[] args) {
-		
-		CurrencyConverterArray cc = new CurrencyConverterArray();
-		cc.setExchangeRates(new double[] {75, 3, 3, 595, 18, 107, 2});
-		cc.printCurrencies();
-		
-		cc.updateExchangeRates(0, 76);
-		cc.printCurrencies();
+		System.out.println("dirham: " + exchangeRates[1]);
+
+		System.out.println("real: " + exchangeRates[2]);
+
+		System.out.println("chilean_peso: " + exchangeRates[3]);
+
+		System.out.println("mexican_peso: " + exchangeRates[4]);
+
+		System.out.println("_yen: " + exchangeRates[5]);
+
+		System.out.println("$australian: " + exchangeRates[exchangeRates.length - 1]);
+
 	}
 
 }
