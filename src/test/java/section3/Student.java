@@ -42,16 +42,33 @@ public class Student {
 
 		System.out.println("Id: " + this.id);
 		System.out.println("Name: " + this.name);
-		System.out.println("Gender: " + this.gender);
-		System.out.println("Age: " + this.age);
-		System.out.println("Phone: " + this.phone);
-		System.out.println("GPA: " + this.gpa);
-		System.out.println("Degree: " + this.degree);
+//		System.out.println("Gender: " + this.gender);
+//		System.out.println("Age: " + this.age);
+//		System.out.println("Phone: " + this.phone);
+//		System.out.println("GPA: " + this.gpa);
+//		System.out.println("Degree: " + this.degree);
+		System.out.println("Student Count: " + studentCount);
+		System.out.println();
 
 	}
 
 	public static void main(String[] args) {
 
 		Student st1 = new Student(1, "Mir", "M", 21, 8765432109l, 3.4, 'A');
+		Student st2 = new Student(2, "Ayan", "M", 21, 8765432109l, 3.4, 'A');
+		Student st3 = new Student(3, "Ali", "M", 21, 8765432109l, 3.4, 'A');
+		
+		System.out.println(st1.name);
+//		System.out.println(st2.name);
+		System.out.println(st3.name);
+		Student[] students = {st1, st2, st3};
+		st2 = st1;
+		st1 = st3;
+		st3 = st2;
+		System.out.println();
+		System.out.println(st1.name);
+//		System.out.println(st2.name);
+		System.out.println(st3.name);
+		
 	}
 }
