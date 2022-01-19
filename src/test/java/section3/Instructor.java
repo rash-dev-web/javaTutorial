@@ -31,16 +31,20 @@ public class Instructor {
 	}
 
 	public String getMostRecentBookTitle() {
-		Book book = new Book(this.title);
-		return book.getTitle();
+
+		return books[books.length - 1].getTitle();
 	}
 
 	public Book updateBook(int index, String title) {
-		this.books[index] = title;
+		Book oldBook = new Book(books[index].getTitle());
+		books[index].setTitle(title);
+		return oldBook;
 	}
 
 	public Book updateBook(int index, Book book) {
-		return new Book(title);
+		Book oldBook = new Book(books[index].getTitle());
+		books[index] = book;
+		return oldBook;
 	}
 
 	public static void main(String[] args) {
